@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>意 · 朴 | Yi · Pu</title>
+    <meta name="description" content="简以观象，朴以明心。一个基于 Unicode 原型能量的数字映射空间。">
+    <meta property="og:title" content="意 · 朴 | Yi · Pu">
+    <meta property="og:description" content="这里没有算命，只有映射。每一字，皆是未经雕琢的“朴”。">
+
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.svg">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6b4e3d">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="earth-layer"></div>
+    <div id="field"></div>
+
+    <div id="oracle-card">
+        <div class="oracle-section">
+            <div class="oracle-tag">观象</div>
+            <div class="oracle-text" id="text-vision"></div>
+        </div>
+        <div class="oracle-section">
+            <div class="oracle-tag">品味</div>
+            <div class="oracle-text" id="text-taste"></div>
+        </div>
+        <div class="oracle-section">
+            <div class="oracle-tag">养分</div>
+            <div class="oracle-text" id="text-nutrient" style="color: var(--text-light);"></div>
+        </div>
+    </div>
+
+    <div id="brand-mark" onclick="toggleManifesto()">意 · 朴</div>
+
+    <div id="manifesto">
+        <div class="manifesto-content">
+            <div class="manifesto-title">意 · 朴</div>
+            
+            <div id="manifesto-body-container">
+                </div>
+            
+            <div style="width: 20%; height: 1px; background: #332211; margin: 30px auto; opacity: 0.5;"></div>
+
+            <a id="manifesto-link" href="https://tongren.yi.pub/co-create.html" class="manifesto-p" style="display: block; font-style: italic; color: var(--highlight); text-decoration: none; cursor: pointer; transition: all 0.3s;">
+                同人于野 ➹
+            </a>
+            
+            <div class="close-btn" onclick="toggleManifesto()">×</div>
+        </div>
+    </div>
+
+    <div id="lang-btn" onclick="toggleLanguage()">EN</div>
+
+    <script src="data.js"></script>
+
+    <script>
+        const field = document.getElementById('field');
+        const oracleCard = document.getElementById('oracle-card');
+        let isLocked = false;
+        let currentActiveData = null; // 记录当前选中的数据
+
+        // --- 0. 语言系统初始化 (Language System) ---
+        
+        const UI_DICT = {
+            cn: {
+                tag_vision: "观象",
+                tag_taste: "品味",
+                tag_nutrient: "养分",
+                brand: "意 · 朴",
+                btn_text: "EN",
+                manifesto_title: "意 · 朴",
+                manifesto_link_text: "同人于野 ➹",
+                manifesto_body: `
+                    <div class="manifesto-p">简以观象，<strong>以文载道</strong>。<br>
+                    <strong>告别旧象</strong>，文字是能与<strong>本原心智</strong>直接感应的基石。</div>
+                    <div class="manifesto-p">这里没有固定释义，只有<strong>创生性的符号</strong>。<br>
+                    <strong>沟通元神与天道的桥梁一直存在，我们提供能感应到它的“天道视角”。</strong></div>
+                    <div class="manifesto-p">此为<strong>应天承命之举</strong>，只照见当下。<br>
+                    <strong>不预设终点</strong>，只提供驶向新大陆的罗盘。</div>
+                    <div class="manifesto-p" style="margin-top: 30px;">
+                        愿将你的<strong>灵犀</strong>，<br>
+                        化作坠入虚空的<strong>星火</strong>，<br>
+                        拨动时间的涟漪。<br>
+                        在此刻，<br>
+                        <strong>点燃</strong>这片名为文明的<strong>旷野</strong>，<br>
+                        为暗夜中的守护。
+                    </div>
+                `
+            },
+            en: {
+                tag_vision: "VISION",
+                tag_taste: "TASTE",
+                tag_nutrient: "NUTRIENT",
+                brand: "YI · PU",
+                btn_text: "中",
+                manifesto_title: "YI · PU",
+                manifesto_link_text: "Fellowship in the Wild ➹",
+                manifesto_body: `
+                    <div class="manifesto-p">Observe the form simply, and let the **Word embody the Way** (Tao).<br>
+                    **Bid farewell to old idols**; the written word is the cornerstone that directly senses the **Original Mind**.</div>
+                    <div class="manifesto-p">Here there is no fixed meaning, only **creative symbols**.<br>
+                    The **bridge between the Spirit and Heaven's Way** has always existed; we offer the “Heavenly Perspective” to sense it.</div>
+                    <div class="manifesto-p">This is an **act of responding to Heaven's decree**, illuminating only the present moment.<br>
+                    We **do not preset the destination**, only provide the compass to the new continent.</div>
+                    <div class="manifesto-p" style="margin-top: 30px;">
+                        May your **spiritual insight** (Lingxi),<br>
+                        be transformed into a **spark** falling into the void,<br>
+                        stirring the ripples of time.<br>
+                        At this moment,<br>
+                        **ignite** this **wilderness** named civilization,<br>
+                        as a guardian of the dark night.
+                    </div>
+                `
+            }
+        };
+
+        // 优先读取锦囊(Storage)，否则检测系统语言
+        let userLang = localStorage.getItem('yi_lang') || 
+                       (navigator.language.includes('zh') ? 'cn' : 'en');
+        if (userLang !== 'en') userLang = 'cn'; // 兜底
+
+        function applyLanguage() {
+            const dict = UI_DICT[userLang];
+            
+            // 1. 更新静态标签
+            const tags = document.querySelectorAll('.oracle-tag');
+            if (tags.length >= 3) {
+                tags[0].innerText = dict.tag_vision;
+                tags[1].innerText = dict.tag_taste;
+                tags[2].innerText = dict.tag_nutrient;
+            }
+            
+            // 2. 更新品牌
+            const brand = document.getElementById('brand-mark');
+            if(brand) brand.innerText = dict.brand;
+
+            // 3. 更新切换按钮状态
+            const btn = document.getElementById('lang-btn');
+            if(btn) btn.innerText = dict.btn_text;
+
+            // 4. 更新宣言标题
+            const maniTitle = document.querySelector('.manifesto-title');
+            if(maniTitle) maniTitle.innerText = dict.manifesto_title;
+
+            // ★★★ 5. 核心：注入宣言主体 HTML ★★★
+            const maniBody = document.getElementById('manifesto-body-container');
+            if(maniBody) maniBody.innerHTML = dict.manifesto_body;
+            
+            // ★★★ 6. 核心：更新宣言链接文本 ★★★
+            const maniLink = document.getElementById('manifesto-link');
+            if(maniLink) maniLink.innerText = dict.manifesto_link_text;
+
+
+            // 7. 如果当前有卡片打开，立即刷新文字
+            if (currentActiveData) {
+                updateCardText(currentActiveData);
+            }
+        }
+
+        function toggleLanguage() {
+            // 切换
+            userLang = userLang === 'cn' ? 'en' : 'cn';
+            // 存入锦囊
+            localStorage.setItem('yi_lang', userLang);
+            // 应用
+            applyLanguage();
+        }
+
+        function updateCardText(data) {
+            // 1. 获取当前语言的原始数据 (可能是对象，也可能是数组)
+            let rawContent = data[userLang] ? data[userLang] : data.cn;
+            
+            // ★★★ 2. 惊喜逻辑：量子坍缩 ★★★
+            let content;
+            if (Array.isArray(rawContent)) {
+                // 如果配置了多重解读，随机抽取一个
+                // 这就是“惊喜”的来源
+                const randomIndex = Math.floor(Math.random() * rawContent.length);
+                content = rawContent[randomIndex];
+                
+                // (可选) 你甚至可以在控制台打印一下抽到了哪个版本，方便调试
+                console.log(`[惊喜] ${data.char} 触发多重解读: Version ${randomIndex + 1}`);
+            } else {
+                // 普通单解
+                content = rawContent;
+            }
+            
+            // 3. 渲染上墙
+            document.getElementById('text-vision').innerText = content.vision;
+            document.getElementById('text-taste').innerText = content.taste;
+            document.getElementById('text-nutrient').innerText = content.nutrient;
+        }
+
+        // --- 3. 隐形史官 (Infinite History) ---
+        // 移除 MAX_HISTORY 限制，只要浏览器存得下，就一直存
+
+        function addToHistory(data) {
+            // 1. 读取锦囊
+            let history = JSON.parse(localStorage.getItem('yi_history') || '[]');
+            
+            // 2. 获取当前语言下的具体内容 (快照)
+            // 哪怕未来你切了语言，历史记录里留存的也是当时看到的那个版本
+            const content = data[userLang] ? data[userLang] : data.cn;
+
+            // 3. 构造完整条目
+            const entry = {
+                time: new Date().toLocaleString(), // 时间
+                char: data.char,                   // 符号
+                type: data.type,                   // 类型
+                // --- 核心内容快照 ---
+                vision: content.vision,
+                taste: content.taste,
+                nutrient: content.nutrient
+            };
+            
+            // 4. 倒排追加 (新的在最后)
+            history.push(entry);
+            
+            // 5. 封存 (不删减)
+            localStorage.setItem('yi_history', JSON.stringify(history));
+            
+            console.log(`[迹] 已记录 (Total: ${history.length}):`, entry);
+        }
+
+        // --- 1. 核心逻辑 ---
+
+        function init() {
+            // 启动时应用语言
+            applyLanguage();
+
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const targetCount = 27;
+
+            let minDistance;
+            if (width < 400) minDistance = 75; 
+            else if (width < 768) minDistance = 90; 
+            else minDistance = 140; 
+
+            if (typeof archetypes === 'undefined') return;
+
+            let dataPool = [...archetypes].sort(() => Math.random() - 0.5);
+            while (dataPool.length < targetCount) dataPool = dataPool.concat(archetypes);
+            dataPool = dataPool.slice(0, targetCount);
+
+            field.innerHTML = '';
+            const placedPositions = [];
+            const maxAttempts = 200;
+
+            // 字体分类器 v4.1 (确保全覆盖)
+            function getFontFamilyClass(char) {
+                // 1. 汉字检测正则 (包含基本汉字、扩展A/B区)
+                if (/[\u4e00-\u9fa5\u3400-\u4dbf]/.test(char)) return 'family-std';
+                const code = char.codePointAt(0);
+                if (code >= 0x3400 && code <= 0x9FFF) return 'family-std'; // 补全卦象
+                if (code >= 0x0900 && code <= 0x097F) return 'family-sanskrit';
+                if (code >= 0x16A0 && code <= 0x16FF) return 'family-runic';
+                return 'family-alchemy';
+            }
+
+            dataPool.forEach((data) => {
+                const el = document.createElement('div');
+                el.classList.add('relic');
+                el.classList.add(data.type);
+                
+                // 获取字体族群
+                const fontClass = getFontFamilyClass(data.char);
+                el.classList.add(fontClass);
+
+                // ★★★ 核心修正：强制文本化 ★★★
+                // 如果是炼金符号或黄道符号，在字符后面追加 \uFE0E (VS15)
+                // 这会强制手机系统使用黑白字体渲染，而不是彩色 Emoji
+                if (fontClass === 'family-alchemy') {
+                    el.innerText = data.char + '\uFE0E';
+                } else {
+                    el.innerText = data.char;
+                }
+
+                let x, y, collision;
+                let attempts = 0;
+                let currentDistance = minDistance;
+                
+                do {
+                    collision = false;
+                    x = 60 + Math.random() * (width - 120);
+                    y = 100 + Math.random() * (height - 300); 
+
+                    for (let pos of placedPositions) {
+                        const dist = Math.sqrt((x - pos.x)**2 + (y - pos.y)**2);
+                        if (dist < currentDistance) { collision = true; break; }
+                    }
+                    attempts++;
+                    if (attempts > 50) currentDistance = minDistance * 0.85;
+                    if (attempts > 100) currentDistance = minDistance * 0.7;
+                } while (collision && attempts < maxAttempts);
+
+                if (!collision) {
+                    placedPositions.push({x, y});
+                    el.style.left = `${x - 40}px`;
+                    el.style.top = `${y - 40}px`;
+                    el.style.transform = `scale(1)`; 
+                    
+                    el.onmouseenter = () => { if(!isLocked) el.style.transform = `scale(1.3)`; };
+                    el.onmouseleave = () => { if(!isLocked && !el.classList.contains('chosen')) el.style.transform = `scale(1)`; };
+                    el.onclick = () => reveal(el, data);
+                    
+                    field.appendChild(el);
+                }
+            });
+        }
+
+        function reveal(targetEl, data) {
+            if (isLocked) return;
+            isLocked = true;
+            currentActiveData = data; // ★ 锁定当前数据对象
+
+            // ★ 在这里埋点：记录点击历史
+            addToHistory(data);
+
+            targetEl.classList.add('chosen');
+            
+            document.querySelectorAll('.relic').forEach(el => {
+                if (el !== targetEl) el.classList.add('vanish');
+            });
+
+            setTimeout(() => {
+                // ★ 使用新的更新函数
+                updateCardText(data);
+                
+                oracleCard.style.pointerEvents = 'auto'; 
+                oracleCard.style.opacity = 1;
+            }, 600);
+        }
+
+        function toggleManifesto() {
+            document.getElementById('manifesto').classList.toggle('show');
+        }
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            if(isLocked) return;
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(init, 200);
+        });
+
+        init();
+
+        // --- 5. 注册离线守护者 (PWA) ---
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('✅ 结界已部署 (SW Registered)'))
+                    .catch(err => console.log('❌ 结界部署失败', err));
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "意 · 朴 | Yi · Pu",
+  "short_name": "YiPu",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1a0b08",
+  "theme_color": "#6b4e3d",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any", 
+      "type": "image/svg+xml"
+    }
+  ]
+}
