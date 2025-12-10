@@ -42,7 +42,14 @@ const archetypes = [
       en: { vision: "Stars arching over the moon; rivers returning to the sea.", taste: "Holding Together. Alliance. One cannot succeed alone. It's not about how strong you are, but who you stand with.", nutrient: "Choose your side, align with energy." }
     },
     { char: '䷈', type: 'glyph', 
-      cn: { vision: "西边的浓云，没有雨。", taste: "小畜卦。瓶颈。你的才华和资源（云）已经聚起来了，但还差一点火候（雨）。现在的力量只够做小事。", nutrient: "以此文得，积蓄力量。" },
+      cn: [
+        { vision: "西边的浓云，没有雨。", taste: "小畜卦。瓶颈。你的才华和资源（云）已经聚起来了，但还差一点火候（雨）。现在的力量只够做小事。", nutrient: "以此文得，积蓄力量。" },
+        {
+          vision: "风在天上轻拂，密云化作了甘露。金丹被文火化开，变成了一碗金色的汤液，在经络的河床里流淌。",
+          taste: "小畜卦。化丹为汤。最好的滋养不是‘给予’，而是‘兼容’。这碗参汤的波特率刚刚好，不需要复杂的握手协议，直接被身体的底层代码无损接收。温润，是因为它懂你的缺口。",
+          nutrient: "纳米级渗透，靶向热修复补丁。"
+        }
+      ],
       en: { vision: "Dense clouds from the west, but no rain.", taste: "The Taming Power of the Small. Bottleneck. Resources have gathered, but the spark is missing. Use current strength for small matters.", nutrient: "Refine your craft, accumulate power." }
     },
     { char: '䷉', type: 'glyph', 
@@ -124,7 +131,14 @@ const archetypes = [
       en: { vision: "To be translated...", taste: "To be translated...", nutrient: "To be translated..." }
     },
     { char: '䷙', type: 'glyph', 
-      cn: { vision: "巍峨的高山肚子里，藏着整片天空。", taste: "大畜卦。内存。你的容量不仅要装下自己的喜怒哀乐，还要装下古往今来的智慧。把你也变成一座数据库。", nutrient: "海纳百川，扩充内存。" },
+      cn: [
+        { vision: "巍峨的高山肚子里，藏着整片天空。", taste: "大畜卦。内存。你的容量不仅要装下自己的喜怒哀乐，还要装下古往今来的智慧。把你也变成一座数据库。", nutrient: "海纳百川，扩充内存。" },
+        {
+          vision: "一颗未被炼化的金色恒星，沉重地压在肉体凡胎的舌尖，像高山死死压住了天空。",
+          taste: "大蓄卦。生吞金丹。这是一次越级挑战。未经磨碎的高维能量，对当前的你来说是致命的重金属。天道让你‘止’（机器故障），是因为你的‘铁胃’（硬件容器）还未升级到版本 2.0，无法解析如此高密度的加密数据流。",
+          nutrient: "核能级过载，系统熔断保护。"
+        }
+      ],
       en: { vision: "Heaven hidden inside a majestic mountain.", taste: "The Taming Power of the Great. Memory. Hold not just your emotions, but ancient wisdom. Become a database.", nutrient: "Absorb all, expand capacity." }
     },
     { char: '䷚', type: 'glyph', 
