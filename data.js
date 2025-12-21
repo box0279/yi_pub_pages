@@ -126,6 +126,12 @@ const archetypes = [
             vision: "晴空霹雳，未曾预料的震击。", 
             taste: "无妄。天命。这不是飞来横祸，而是天道在校准你的坐标。当你偏离了‘真’，现实就会给你一个‘妄’的反馈。不要用大脑计算得失，回到当下的直觉。", 
             nutrient: "不耕获，不菑涉。只问耕耘，不问收获。" 
+          },
+          // 解读 C: 实战版 (没有算计，以灵魂做赌注)
+          { 
+            vision: "天雷无妄，在天雷下发誓，并信守誓言。", 
+            taste: "誓言中不能有私心，执行时勿忘初心。这是你与天道的缘分，同人于野，演绎文明。", 
+            nutrient: "天枰的左右是你和他，上方是天道雷池。赌上灵魂，信守承诺，不忘初心，最终无悔。" 
           }
       ],
       en: { vision: "To be translated...", taste: "To be translated...", nutrient: "To be translated..." }
@@ -378,7 +384,10 @@ const archetypes = [
       en: { vision: "Wind following wind, penetrating everywhere.", taste: "The Gentle. Penetration. Flexible persistence. Don't crash; find the cracks like wind. Subtle change.", nutrient: "Repeated commands, softness overcomes hard." }
     },
     { char: '䷹', type: 'glyph', 
-      cn: { vision: "两泽相连，互相滋润。", taste: "兑卦。说服。喜悦是可以传染的。通过沟通来化解隔阂。不是用逻辑征服，而是用情绪感染。", nutrient: "朋友讲习，分享喜悦。" },
+      cn: [
+        { vision: "两泽相连，互相滋润。", taste: "兑卦。说服。喜悦是可以传染的。通过沟通来化解隔阂。不是用逻辑征服，而是用情绪感染。", nutrient: "朋友讲习，分享喜悦。" },
+        { vision: "两个湖连成一片", taste: "发生了内存覆盖", nutrient: "数据冲突,检查内存是否越界溢出" }
+      ],
       en: { vision: "Two lakes joined, nourishing each other.", taste: "The Joyous. Persuasion. Joy is contagious. Dissolve barriers through connection. Infect with emotion, not just logic.", nutrient: "Share wisdom, spread joy." }
     },
     { char: '䷺', type: 'glyph', 
@@ -495,7 +504,10 @@ const archetypes = [
       en: { vision: "Two mountains standing together.", taste: "Twin Peaks. Stability and height. You need a partner of equal stature.", nutrient: "Stand tall, walk together." }
     },
     { char: '淼', type: 'glyph', 
-      cn: { vision: "无边无际的水面。", taste: "浩渺。你的格局需要打开，不要局限在小河沟里。", nutrient: "心胸浩大，包容万物。" },
+      cn: [
+        { vision: "无边无际的水面。", taste: "浩渺。你的格局需要打开，不要局限在小河沟里。", nutrient: "心胸浩大，包容万物。" },
+        { vision: "三个线程发生竞争", taste: "内存数据连成一片", nutrient: "检查单消费者单生产者模式队列是否违反了使用规定" }
+      ],
       en: { vision: "Endless expanse of water.", taste: "Vastness. Open your perspective. Do not stay in the ditch.", nutrient: "Be vast, encompass all." }
     },
     { char: '焱', type: 'glyph', 
@@ -585,8 +597,20 @@ const archetypes = [
       en: { vision: "Giant dragon in the swamp.", taste: "Alligator. Rhythm and ambush. Feel the heartbeat in the murky water.", nutrient: "Master the rhythm, wait to strike." }
     },
     { char: '鰲', type: 'totem', 
-      cn: { vision: "深海中顶着仙山的巨龟。", taste: "独占鳌头。你是基础，是底座。世界立在你背上。", nutrient: "中流砥柱，独占鳌头。" },
+      cn: [
+        { vision: "深海中顶着仙山的巨龟。", taste: "独占鳌头。你是基础，是底座。世界立在你背上。", nutrient: "中流砥柱，独占鳌头。" },
+        { vision: "承载大地的巨龟", taste: "程序基座发生错误", nutrient: "检查程序基础设施、基本设计" }
+      ],
       en: { vision: "Giant turtle supporting a mountain in the sea.", taste: "Ao. The Foundation. You are the pillar. The world stands on your back.", nutrient: "Be the pillar, stand top." }
+    },
+    {
+      char: '靈', type: 'totem', 
+      cn: { 
+        vision: "上覆「雨」阵： 是天意的垂青，亦是积蓄已久的潜能与势能。中列「三口」： 如祭器陈列，是承接甘露的端口（API/Interface），也是众生共鸣的呼唤。下驻「巫」者： 立于天地之间，以舞动（代码/行为）勾连虚实。它将高空停滞的云，具象化为滋养大地的雨。一个纵向贯通的能量结构。", 
+        taste: "在静待雨来之时，「靈」是那个破局的瞬间。 它所代表的神力，不是盲目的恩赐，而是「感应」的结果。秘密之所以成为秘密，是因为它在等待合适的频率。当「巫」的身影出现，意味着开发者不再枯坐，而是通过主动的介入，让系统从「静止」转向「流转」", 
+        nutrient: "不要只是等，去做那个沟通天地的巫。开始行动，创造仪式，跳一只舞，建立让雨落下的引力场。" 
+      },
+      en: { vision: "nothing.", taste: "nothing.", nutrient: "nothing." }
     },
     { char: '蠱', type: 'totem', 
       cn: { vision: "器皿中纠缠的毒虫。", taste: "诱惑与博弈。活下来的才是最强的。", nutrient: "优胜劣汰，以此炼心。" },
