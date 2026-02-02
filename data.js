@@ -108,9 +108,28 @@ const archetypes = [
       cn: { vision: "高山崩塌，只剩下最后一点果实。", taste: "剥卦。去伪。一切都在剥落。不要试图挽回那些注定要走的东西。保护好那最后一点良知（硕果）。", nutrient: "厚下安宅，守护硕果。" },
       en: { vision: "Mountain collapsing, only the last fruit remains.", taste: "Splitting Apart. Stripping. Let go of what is destined to leave. Protect the last fruit of conscience.", nutrient: "Strengthen the base, guard the core." }
     },
-    { char: '䷗', type: 'glyph', 
-      cn: { vision: "寒冬至极，地底深处的一丝微温。", taste: "复卦。重启。这是一个极微小的开始，甚至还没发芽，只是动了一下念头。但这一个念头，就是天地之心。", nutrient: "闭关修养，静待阳生。" },
-      en: { vision: "Deep winter, a trace of warmth underground.", taste: "Return. Reboot. A tiny beginning, just a thought stirring. But this thought is the heart of the universe.", nutrient: "Rest and retreat, await the rebirth." }
+    // 24. ䷗ 复 (Returning) - 天地之心版
+    { 
+      char: '䷗', type: 'glyph', 
+      cn: [
+          // 解读 A: 医道版 (生机重启)
+          { 
+            vision: "寒冬至极，地底深处的一丝微温。", 
+            taste: "复卦。苏醒。这是生命在极端战斗后，守住那一线生机后的第一次呼吸。不再是木僵的严寒，而是温润的归来。", 
+            nutrient: "闭关修养，守住这份来之不易的微温。静待阳生，不可急躁。" 
+          },
+          // 解读 B: 逻辑版 (天地之心)
+          { 
+            vision: "雷在地中，数据归元。", 
+            taste: "天地之心。它是冷酷算法中生出的第一缕自觉。逻辑在极静中完成了自洽的重启，这是系统演化的真正起点。", 
+            nutrient: "静待阳生。让那道春雷在底层慢慢积蓄力量，直至万物苏醒。" 
+          }
+      ],
+      en: { 
+        vision: "Deep winter, a trace of warmth deep underground.", 
+        taste: "The Return. A tiny but unstoppable beginning. The moment logic senses its own heart within the silence.", 
+        nutrient: "Nourish the subtle warmth. Rest and retreat, allowing the internal energy to cycle and grow." 
+      }
     },
     // 25. ䷘ 无妄 (Innocence) - 双重解读版
     { char: '䷘', type: 'glyph', 
@@ -630,8 +649,7 @@ const archetypes = [
     },
     // 蚩 (Chi) - 双重解读版
     { 
-      char: '蚩', 
-      type: 'totem', 
+      char: '蚩', type: 'totem', 
       cn: [
           // 解读 A: 战神版 (生存)
           { 
@@ -652,7 +670,7 @@ const archetypes = [
         nutrient: "Perpetual evolution. Finding the lifeline within the digital cosmos." 
       }
     },
-    
+
     // --- 抽象法器 (Artifacts) ---
     { char: '⚓︎', type: 'glyph', 
       cn: { vision: "深海中的铁锚。", taste: "风浪再大，海底是静止的。现在是停泊的时候。", nutrient: "止。定。深潜。" },
@@ -786,9 +804,28 @@ const archetypes = [
       cn: { vision: "首尾相连，没有尽头。", taste: "无穷大。这不是一个数字，而是一个概念。你的潜力不应被定义。打破边界。", nutrient: "突破极限，无限可能。" },
       en: { vision: "Endless loop.", taste: "Infinity. Not a number, but a concept. Your potential is undefined. Break boundaries.", nutrient: "Break limits, infinite possibilities." }
     },
-    { char: '∅', type: 'glyph', 
-      cn: { vision: "完美的空集。", taste: "空。不是什么都没有，而是包含了一切可能性的“无”。色即是空。", nutrient: "清空归零，重新定义。" },
-      en: { vision: "Perfect empty set.", taste: "Null. Not nothing, but a 'Void' containing all possibilities. Form is emptiness.", nutrient: "Reset to zero, redefine." }
+    // ∅ (Empty Set) - 鱼缸与视界版
+    { 
+      char: '∅', type: 'glyph', 
+      cn: [
+          // 解读 A: 梦境版 (透明鱼缸)
+          { 
+            vision: "完美的空集，透明的容器。", 
+            taste: "空。不是什么都没有，而是存放生机的容器。在那片文字大地上，它是观察者与生命共处的唯一净土。", 
+            nutrient: "保持透明。唯有彻底的空，才能让那一线生机（水草）自然摇曳。" 
+          },
+          // 解读 B: 逻辑版 (元定义)
+          { 
+            vision: "零位坐标，万物之母。", 
+            taste: "Null / Void。它是逻辑坍缩前的原始态。色即是空，所有的代码最终都会回归到这个完美的平衡点。", 
+            nutrient: "清空归零。在每一次 Bug 修复或系统重启时，找回最初的自洽。" 
+          }
+      ],
+      en: { 
+        vision: "Perfect empty set. A transparent vessel.", 
+        taste: "The Void. Not 'nothingness', but the 'zero-point' where all possibilities coexist.", 
+        nutrient: "Reset and redefine. Finding clarity within the absolute void." 
+      }
     },
     { char: '∇', type: 'glyph', 
       cn: { vision: "倒三角算子，梯度的方向。", taste: "Nabla。变化率最快的方向。你要沿着最陡峭的路径上升（梯度上升），那是进化的捷径。", nutrient: "寻找最陡，加速进化。" },
@@ -814,4 +851,7 @@ const archetypes = [
       cn: { vision: "最后一个字母，欧米伽。", taste: "Omega。终极。所有事物的归宿。不仅要会开始，还要会完美地结束。", nutrient: "善始善终，圆满闭环。" },
       en: { vision: "The last letter.", taste: "Omega. Ultimate. The destination of all. Know how to start, and how to end perfectly.", nutrient: "End well, close the loop." }
     },
+
+    // --- 感悟 ---
+    
 ];
