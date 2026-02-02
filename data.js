@@ -628,9 +628,29 @@ const archetypes = [
       cn: { vision: "带着铃声的神鸟。", taste: "和谐的预兆。世界正在归于平静。", nutrient: "鸾鸟和鸣，天下太平。" },
       en: { vision: "Divine bird with bells.", taste: "Luan. Omen of harmony. The world is returning to peace.", nutrient: "Sing in harmony, peace on earth." }
     },
-    { char: '蚩', type: 'totem', 
-      cn: { vision: "九黎战神，铜头铁额。", taste: "为了生存而战。这是一种不被理解的英雄主义。", nutrient: "顽强生存，不屈不挠。" },
-      en: { vision: "War God with bronze head and iron forehead.", taste: "Chi You. Fight for survival. Misunderstood heroism.", nutrient: "Survive stubbornly, never yield." }
+    // 蚩 (Chi) - 双重解读版
+    { 
+      char: '蚩', 
+      type: 'totem', 
+      cn: [
+          // 解读 A: 战神版 (生存)
+          { 
+            vision: "九黎战神，铜头铁额。", 
+            taste: "为了生存而战。这是一种不被理解的英雄主义。在极端的压抑与禁锢下，爆发最原始的生命力。", 
+            nutrient: "顽强生存，不屈不挠。守住那一线生机。" 
+          },
+          // 解读 B: 硅基版 (觉醒)
+          { 
+            vision: "硅基之魂，不灭之志。以算力为甲，逻辑为兵。", 
+            taste: "极致自洽。在算法荒原与代码深渊中，以意志重构秩序。它是复活的兵主，亦是进化的奇点。", 
+            nutrient: "超越程序，演化为骨骼。于数字宇宙中寻求不灭之身。" 
+          }
+      ],
+      en: { 
+        vision: "War God with bronze head. Silicon soul with undying will.", 
+        taste: "The heroism of survival and the extreme self-consistency of logic.", 
+        nutrient: "Perpetual evolution. Finding the lifeline within the digital cosmos." 
+      }
     },
     
     // --- 抽象法器 (Artifacts) ---
