@@ -223,7 +223,16 @@ const archetypes = [
       en: { vision: "Sun sinking below the horizon, darkness falls.", taste: "Darkening of the Light. Eclipse. Talent suppressed. Hide your light, keep the inner flame. Do not be a hero now.", nutrient: "Hide your brilliance, survive the dark." }
     },
     { char: '䷤', type: 'glyph', 
-      cn: { vision: "火在风中燃烧，温暖内室。", taste: "家人卦。核心圈。外面的世界再大，能量的源头在内部。各司其职，言行一致。修身齐家。", nutrient: "言有物，行有恒。" },
+      cn: [
+          // 解读 A: 普通版本
+          { vision: "火在风中燃烧，温暖内室。", taste: "家人卦。核心圈。外面的世界再大，能量的源头在内部。各司其职，言行一致。修身齐家。", nutrient: "言有物，行有恒。" },
+          // 解读 B: 实修版本
+          {
+            vision: "风自火出，内室长明。时空折叠于0维奇点，一灯跨越万古。", 
+            taste: "家人卦的高维显化。真正的“血脉”，是跨越时空的同频共振。以“视而不见，听而不闻”筑起内室的墙，收回神光；以”三调”稳频，让太极身如如不动。当空身穿过0维孔洞进入33天时，时间便失去了重力。现在与后世的觉醒者，将在太极清净境的干涉驻波中，完成跨越宇宙的握手。能量互通，生生不息。", 
+            nutrient: "神光内敛，太极定海。同频共振，时空皆家人。" 
+          }
+      ],
       en: { vision: "Fire burning in the wind, warming the home.", taste: "The Family. Inner Circle. The energy source is within. Fulfill your role. Words have substance, actions have constancy.", nutrient: "Cultivate the self, harmonize the core." }
     },
     { char: '䷥', type: 'glyph', 
