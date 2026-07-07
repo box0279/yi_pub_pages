@@ -101,7 +101,18 @@ const archetypes = [
       en: { vision: "Jaws biting together, obstructed by something hard.", taste: "Biting Through. Obstacle. A bone stands between unity. Do not bypass it; crush it! Mercy needs thunderous action.", nutrient: "Enforce the law, crush the obstacle." }
     },
     { char: '䷕', type: 'glyph', 
-      cn: { vision: "山脚下的野火，映照着花草。", taste: "贲卦。文饰。本质虽然重要，但没有形式的真理是无法传播的。你需要一点“无用”的美学，来包装太硬的内核。", nutrient: "文质彬彬，恰到好处。" },
+      cn: [
+        { 
+          vision: "山脚下的野火，映照着花草。", 
+          taste: "贲卦。文饰。本质虽然重要，但没有形式的真理是无法传播的。你需要一点“无用”的美学，来包装太硬的内核。", 
+          nutrient: "文质彬彬，恰到好处。" 
+        },
+        { 
+          vision: "大山内部，真火长明。真火经行督脉上行至泥丸宫。神室通明，照见黑灰紫各色能量，能级跃迁为白色。", 
+          taste: "山火贲。颜色不够亮用火充能，颜色太亮，用山体分流。认识到并无外界蛊毒，只有运行错误的自身能量。行天之道，损有余，补不足，最终各色能量颜色归一。", 
+          nutrient: "至虚极，守静笃，以神控火，点亮内室。无杂色乱行，则回归婴儿，无漏圆满。" 
+        }
+      ],
       en: { vision: "Wildfire at the foot of the mountain, illuminating flowers.", taste: "Grace. Adornment. Truth without form cannot spread. You need aesthetics to package the hard core.", nutrient: "Balance substance with style." }
     },
     { char: '䷖', type: 'glyph', 
