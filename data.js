@@ -499,6 +499,20 @@ const archetypes = [
       en: { vision: "Void Seed Kham.", taste: "Absolute Space. Only by making space can the new enter.", nutrient: "Empty the mind, wait in the void." }
     },
 
+    // --- 天道祝福 ---
+    { char: 'भै', type: 'glyph', 
+      cn: { 
+        vision: "东方净琉璃世界。蓝宝石琉璃显现，治愈蓝光穿透身心。", 
+        taste: "‘愿我来世，身如琉璃，内外明彻，净无瑕秽。愿我来世，心如琉璃，内外明澈，净无瑕秽。’", 
+        nutrient: "来世即是当下。天道链接东方净琉璃世界，带来一份祝福。" 
+      },
+      en: { 
+        vision: "The Eastern Pure Lapis Lazuli World. A sapphire lapis lazuli manifests, its healing blue light penetrating body and mind.", 
+        taste: "‘I vow that in a future life, my body shall be like lapis lazuli, bright and clear inside and out, pure and flawless. I vow that in a future life, my mind shall be like lapis lazuli, bright and clear inside and out, pure and flawless.’", 
+        nutrient: "The future life is the present moment. The Heavenly Dao links to the Eastern Pure Lapis Lazuli World, bringing a blessing." 
+      }
+    },
+
     // --- 卢恩符文 (Runes) ---
     { char: 'ᛉ', type: 'glyph', 
       cn: { vision: "守护之角 Algiz。", taste: "神圣的保护。你被更高的力量守护着，像麋鹿的角一样敏锐。", nutrient: "连接高维，寻求庇护。" },
