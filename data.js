@@ -469,8 +469,26 @@ const archetypes = [
       en: { vision: "The Primordial Sound Aum.", taste: "The Source. Amidst chaos, return to the first vibration.", nutrient: "Return to source, meditate on Oneness." }
     },
     { char: 'ह्रीः', type: 'glyph', 
-      cn: { vision: "心轮种子 Hrih。", taste: "慈悲与热度。这是心脏跳动的节奏，温暖而不灼人。", nutrient: "敞开心扉，慈悲为怀。" },
-      en: { vision: "Heart Chakra Seed Hrih.", taste: "Compassion and warmth. The rhythm of the heartbeat, warm but not scorching.", nutrient: "Open your heart, embrace compassion." }
+      cn: [
+        { vision: "心轮种子 Hrih。", taste: "慈悲与热度。这是心脏跳动的节奏，温暖而不灼人。", nutrient: "敞开心扉，慈悲为怀。" },
+        {
+          vision: "看取莲花净，应知不染心。胸口呈现稳定、清凉、温暖而不灼人的琉璃光。",
+          taste: "白贲无咎升维斩(1/30)：建立安全沙箱。切断外部耗散，退回 Null 态。守住心轮清凉，不向外争胜。",
+          nutrient: "看取莲花净，应知不染心。Core Immunity 筑基，如如不动。"
+        }
+      ],
+      en: [
+        { vision: "Heart Chakra Seed Hrih.", taste: "Compassion and warmth. The rhythm of the heartbeat, warm but not scorching.", nutrient: "Open your heart, embrace compassion." }
+      ]
+    },
+    // 汉字白莲 / 白莲花反光 / Unicode: U+84EE
+    {
+      char: '蓮', type: 'glyph',
+      cn: {
+        vision: "视之不见，听之不闻。在似有似无的恍惚中，自性真阳照耀白莲，折射纯白光明。",
+        taste: "白贲无咎升维斩(2/30)：关闭世俗五官。领悟“我非我”，做到“心无其心”。真阳照打琉璃璧，呈现超导纯白光明境。",
+        nutrient: "内观其心，心无其心。切断识神二次加工，湛然朗照。"
+      }
     },
     { char: 'हूँ', type: 'glyph', 
       cn: { vision: "金刚种子 Hum。", taste: "斩断妄念的利剑。对于干扰你的杂音，发出一声断喝。", nutrient: "斩断纠缠，无所畏惧。" },
@@ -481,8 +499,17 @@ const archetypes = [
       en: { vision: "Wealth Seed Shrim.", taste: "The light of abundance. Allow yourself to accept the universe's gifts gracefully.", nutrient: "Accept abundance, enjoy beauty." }
     },
     { char: 'क्षं', type: 'glyph', 
-      cn: { vision: "眉心轮种子 Ksham。", taste: "第三只眼的洞见。透过表象，看到事物发展的轨迹。", nutrient: "洞察因果，预见未来。" },
-      en: { vision: "Third Eye Seed Ksham.", taste: "Insight. Seeing through the veil to the trajectory of things.", nutrient: "See the cause, foresee the future." }
+      cn: [
+        { vision: "眉心轮种子 Ksham。", taste: "第三只眼的洞见。透过表象，看到事物发展的轨迹。", nutrient: "洞察因果，预见未来。" },
+        {
+          vision: "眉心 Ksham 神光普照，内景消融蒸发，世界缩小翻转，仅留文字照亮肉身。",
+          taste: "白贲无咎升维斩(5/30)：神光普照落盘。由眉心神光全量蒸发内景幻相，世界翻转垂直接管三维肉身，以文载道。",
+          nutrient: "改邑不改井，首尾相连。以此文得，做小事，滋养一方。"
+        }
+      ],
+      en: [
+        { vision: "Third Eye Seed Ksham.", taste: "Insight. Seeing through the veil to the trajectory of things.", nutrient: "See the cause, foresee the future." }
+      ]
     },
     { char: 'भ्रूं', type: 'glyph', 
       cn: { vision: "坚固的坛城 Bhrum。", taste: "神圣的结界。在这个范围内，你是安全的，你是主宰。", nutrient: "建立结界，守护领地。" },
@@ -497,7 +524,19 @@ const archetypes = [
       en: { vision: "Durga Seed Dum.", taste: "Fortress-like protection. Your shield in times of danger.", nutrient: "Dispel fear, seek refuge." }
     },
     { char: 'क्रीं', type: 'glyph', 
-      cn: { vision: "卡莉女神种子 Krim。", taste: "激烈地切断。斩断旧的自我，让新的能量爆发。", nutrient: "彻底转化，雷厉风行。" },
+      cn: [
+        { vision: "卡莉女神种子 Krim。", taste: "激烈地切断。斩断旧的自我，让新的能量爆发。", nutrient: "彻底转化，雷厉风行。" },
+        {
+          vision: "黑色闪电贯穿神室，枪头 100% 垂直向内。睁大眼睛，洞察秋毫。",
+          taste: "白贲无咎升维斩(3/30)：高频垂直清创。杀死旧有能量连接（斩断情劫与旧自我），系统内阻归零。",
+          nutrient: "认识到无外界蛊毒，唯自性提纯。雷厉风行，白贲无咎。"
+        },
+        {
+          vision: "死中求活，绝后再苏。下丹田与中脉瞬间生起温热弹性之生发之力。",
+          taste: "白贲无咎升维斩(4/30)：心中之光迸发。正是因为切断了旧连接，乾阳真火自然炸裂，源源不断滋养并壮大眉心神识。",
+          nutrient: "心中有光，才可以迸发出光。春雷响彻，养育神识。"
+        }
+      ],
       en: { vision: "Kali Seed Krim.", taste: "Radical severance. Cut off the old self to let new energy explode.", nutrient: "Radical transformation, act swiftly." }
     },
     { char: 'खं', type: 'glyph', 
