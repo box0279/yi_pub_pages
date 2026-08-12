@@ -438,8 +438,14 @@ const archetypes = [
       en: { vision: "Water over lake, full to overflowing.", taste: "Limitation. Boundaries. Bamboo needs nodes to grow tall. Freedom needs limits. Set rules for desire.", nutrient: "Set limits, discuss virtue." }
     },
     { char: '䷼', type: 'glyph', 
-      cn: { vision: "风吹在泽面上，信实如期。", taste: "中孚卦。共振。诚信能感动猪和鱼。不需要任何技巧，只有一颗真心。鹤鸣在阴，其子和之。", nutrient: "议狱缓死，以诚待人。" },
-      en: { vision: "Wind over lake, faithful as promised.", taste: "Inner Truth. Resonance. Sincerity moves even pigs and fish. No tricks, just a true heart. The crane calls, the young answers.", nutrient: "Judge with mercy, treat with truth." }
+      cn: [
+        { vision: "风吹在泽面上，信实如期。", taste: "中孚卦。共振。诚信能感动猪和鱼。不需要任何技巧，只有一颗真心。鹤鸣在阴，其子和之。", nutrient: "议狱缓死，以诚待人。" },
+        { vision: "风吹泽面，中虚受气。诚信立基，无私感通。", taste: "风泽中孚。极度透明与真实的契合。放弃一切虚妄的技巧，回归底层的纯粹。", nutrient: "诚者，天之道也；思诚者，人之道也。以绝对的真诚面对当下的磨损与抉择。" }
+      ],
+      en: [
+        { vision: "Wind over lake, faithful as promised.", taste: "Inner Truth. Resonance. Sincerity moves even pigs and fish. No tricks, just a true heart. The crane calls, the young answers.", nutrient: "Judge with mercy, treat with truth." },
+        { vision: "Wind over the lake; inner emptiness receiving the breath. Trust established, effortless resonance.", taste: "Zhong Fu. Absolute transparency and alignment. Stripping away artificial craft to return to core purity.", nutrient: "Sincerity is the way of Heaven. Face current friction and choices with absolute truthfulness." }
+      ]
     },
     { char: '䷽', type: 'glyph', 
       cn: { vision: "雷声被山挡住，飞鸟遗音。", taste: "小过卦。低飞。现在不宜做大事，只宜做小事。不宜上，宜下。保持谦卑，稍微过度一点点的恭敬是安全的。", nutrient: "行过乎恭，丧过乎哀。" },
