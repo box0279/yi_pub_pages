@@ -867,6 +867,17 @@ const archetypes = [
         nutrient: "Reset and redefine. Finding clarity within the absolute void." 
       }
     },
+    // 睁大的眼睛 / 洞察秋毫 / 门本自开
+    {
+      char: '👁', type: 'glyph',
+      cn: [
+        {
+          vision: "混沌中睁开巨眼，旧网罗瞬间消融。门本敞开，无复蒙蔽。",
+          taste: "看见。真相一直在那里，只是你闭上了眼。以卡莉之剑（Krim）激烈切断旧连接，直面真相，洞察秋毫。",
+          nutrient: "不攀缘，不犹豫。收回所有耗散的神光，以绝对主权观察者之姿，如如不动，乐在其中。"
+        }
+      ]
+    },
     { char: '∇', type: 'glyph', 
       cn: { vision: "倒三角算子，梯度的方向。", taste: "Nabla。变化率最快的方向。你要沿着最陡峭的路径上升（梯度上升），那是进化的捷径。", nutrient: "寻找最陡，加速进化。" },
       en: { vision: "Inverted delta, gradient.", taste: "Nabla. Direction of fastest change. Climb the steepest path (Gradient Ascent); it's the shortcut.", nutrient: "Find steepness, accelerate evolution." }
