@@ -161,7 +161,7 @@ const archetypes = [
           { 
             vision: "天雷无妄，在天雷下发誓，并信守誓言。", 
             taste: "誓言中不能有私心，执行时勿忘初心。这是你与天道的缘分，同人于野，演绎文明。", 
-            nutrient: "天枰的左右是你和他，上方是天道雷池。赌上灵魂，信守承诺，不忘初心，最终无悔。" 
+            nutrient: "天枰的左右是你和世界，上方是天道雷池。直面真实，锻打无妄。" 
           }
       ],
       en: { vision: "To be translated...", taste: "To be translated...", nutrient: "To be translated..." }
