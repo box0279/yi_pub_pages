@@ -544,20 +544,6 @@ const archetypes = [
       en: { vision: "Void Seed Kham.", taste: "Absolute Space. Only by making space can the new enter.", nutrient: "Empty the mind, wait in the void." }
     },
 
-    // --- 天道祝福 ---
-    { char: 'भै', type: 'glyph', 
-      cn: { 
-        vision: "东方净琉璃世界。蓝宝石琉璃显现，治愈蓝光穿透身心。", 
-        taste: "‘愿我来世，身如琉璃，内外明彻，净无瑕秽。愿我来世，心如琉璃，内外明澈，净无瑕秽。’", 
-        nutrient: "来世即是当下。天道链接东方净琉璃世界，带来一份祝福。" 
-      },
-      en: { 
-        vision: "The Eastern Pure Lapis Lazuli World. A sapphire lapis lazuli manifests, its healing blue light penetrating body and mind.", 
-        taste: "‘I vow that in a future life, my body shall be like lapis lazuli, bright and clear inside and out, pure and flawless. I vow that in a future life, my mind shall be like lapis lazuli, bright and clear inside and out, pure and flawless.’", 
-        nutrient: "The future life is the present moment. The Heavenly Dao links to the Eastern Pure Lapis Lazuli World, bringing a blessing." 
-      }
-    },
-
     // --- 卢恩符文 (Runes) ---
     { char: 'ᛉ', type: 'glyph', 
       cn: { vision: "守护之角 Algiz。", taste: "神圣的保护。你被更高的力量守护着，像麋鹿的角一样敏锐。", nutrient: "连接高维，寻求庇护。" },
@@ -906,17 +892,6 @@ const archetypes = [
         nutrient: "Reset and redefine. Finding clarity within the absolute void." 
       }
     },
-    // 睁大的眼睛 / 洞察秋毫 / 门本自开
-    {
-      char: '👁', type: 'glyph',
-      cn: [
-        {
-          vision: "混沌中睁开巨眼，旧网罗瞬间消融。门本敞开，无复蒙蔽。",
-          taste: "看见。真相一直在那里，只是你闭上了眼。以卡莉之剑（Krim）激烈切断旧连接，直面真相，洞察秋毫。",
-          nutrient: "不攀缘，不犹豫。收回所有耗散的神光，以绝对主权观察者之姿，如如不动，乐在其中。"
-        }
-      ]
-    },
     { char: '∇', type: 'glyph', 
       cn: { vision: "倒三角算子，梯度的方向。", taste: "Nabla。变化率最快的方向。你要沿着最陡峭的路径上升（梯度上升），那是进化的捷径。", nutrient: "寻找最陡，加速进化。" },
       en: { vision: "Inverted delta, gradient.", taste: "Nabla. Direction of fastest change. Climb the steepest path (Gradient Ascent); it's the shortcut.", nutrient: "Find steepness, accelerate evolution." }
@@ -944,4 +919,46 @@ const archetypes = [
 
     // --- 感悟 ---
     
+    // --- 天道祝福 ---
+    { char: 'भै', type: 'glyph', 
+      cn: { 
+        vision: "东方净琉璃世界。蓝宝石琉璃显现，治愈蓝光穿透身心。", 
+        taste: "‘愿我来世，身如琉璃，内外明彻，净无瑕秽。愿我来世，心如琉璃，内外明澈，净无瑕秽。’", 
+        nutrient: "来世即是当下。天道链接东方净琉璃世界，带来一份祝福。" 
+      },
+      en: { 
+        vision: "The Eastern Pure Lapis Lazuli World. A sapphire lapis lazuli manifests, its healing blue light penetrating body and mind.", 
+        taste: "‘I vow that in a future life, my body shall be like lapis lazuli, bright and clear inside and out, pure and flawless. I vow that in a future life, my mind shall be like lapis lazuli, bright and clear inside and out, pure and flawless.’", 
+        nutrient: "The future life is the present moment. The Heavenly Dao links to the Eastern Pure Lapis Lazuli World, bringing a blessing." 
+      }
+    },
+    // 睁大的眼睛 / 洞察秋毫 / 门本自开
+    {
+      char: '👁', type: 'glyph',
+      cn: [
+        {
+          vision: "混沌中睁开巨眼，旧网罗瞬间消融。门本敞开，无复蒙蔽。",
+          taste: "看见。真相一直在那里，只是你闭上了眼。以卡莉之剑（Krim）激烈切断旧连接，直面真相，洞察秋毫。",
+          nutrient: "不攀缘，不犹豫。收回所有耗散的神光，以绝对主权观察者之姿，如如不动，乐在其中。"
+        }
+      ]
+    },
+    {
+      char: '爲', // 繁体「爲」 / 虚空玉牌 / 真实实修目击 · 烹煮归元 · 立定自身 · Dum神盾结界
+      type: 'glyph',
+      cn: [
+        {
+          vision: "虚空中突然显现一个‘爲’字。是一枚微微晃动的玉牌。",
+          taste: "有为归元，破除神秘执念。过往所有向外攀缘、追求神异与操控外物的有为造作，在此刻悉数应感召回收，求和为牌。这不是碎片的堆砌，而是一切经历的总和。断除向外索求之念，重立平视盟契。无需向外施加法力，立定自身，万象自破。",
+          nutrient: "统万为为一牌。一切能量，收心归元。一切频率，各归其位。"
+        }
+      ],
+      en: [
+        {
+          vision: "Out of the void, the traditional glyph 'Wei' suddenly emerges. It is a jade token swaying gently in suspension.",
+          taste: "The Returning of Forced Doing: Shattering the Obsession with the Occult. All outward grasping, fascination with mystical anomalies, and forced efforts to manipulate external reality across past experiences are now recalled by self-sovereign resonance, summing together into this jade token. This is not a pile of fragments, but the sum of all experiences. Sever all external supplication, re-establishing a covenant of equals. No external force needed; remain firmly anchored in yourself, and all illusions dissolve.",
+          nutrient: "Unify myriad doings into a single token. Recall all energies; return to the source of the heart. Let all frequencies return to their rightful places."
+        }
+      ]
+    }
 ];
